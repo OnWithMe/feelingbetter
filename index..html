@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Babyyyy ❤️</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #fff0f5, #ffe4ec, #fce8ff);
+        color: #4b2435;
+        overflow-x: hidden;
+    }
+
+    /* ---------------- BACKGROUND HEARTS ---------------- */
+
+    .hearts {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    .heart {
+        position: absolute;
+        bottom: -50px;
+        animation: floatUp linear infinite;
+        opacity: 0.35;
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0;
+        }
+
+        15% {
+            opacity: 0.4;
+        }
+
+        100% {
+            transform: translateY(-110vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    /* ---------------- MAIN ---------------- */
+
+    .container {
+        position: relative;
+        z-index: 2;
+        width: 92%;
+        max-width: 800px;
+        margin: auto;
+        padding: 35px 0 60px;
+        text-align: center;
+    }
+
+    /* ---------------- HERO ---------------- */
+
+    .hero {
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tiny {
+        font-size: 15px;
+        letter-spacing: 2px;
+        color: #b55b7c;
+        margin-bottom: 12px;
+    }
+
+    h1 {
+        font-size: clamp(42px, 10vw, 75px);
+        color: #d94f7d;
+        margin-bottom: 10px;
+        animation: softPulse 3s infinite;
+    }
+
+    @keyframes softPulse {
+        0%,100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.03);
+        }
+    }
+
+    .subtitle {
+        max-width: 580px;
+        font-size: 19px;
+        line-height: 1.7;
+        color: #704355;
+        margin-bottom: 30px;
+    }
+
+    .scroll {
+        margin-top: 35px;
+        color: #ad6981;
+        font-size: 14px;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%,100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(8px);
+        }
+    }
+
+    /* ---------------- CARD ---------------- */
+
+    .card {
+        background: rgba(255,255,255,0.72);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.8);
+        border-radius: 30px;
+        padding: 32px 25px;
+        margin: 25px 0;
+        box-shadow: 0 15px 45px rgba(160,75,105,0.12);
+    }
+
+    .card h2 {
+        color: #d64f7b;
+        margin-bottom: 15px;
+        font-size: 27px;
+    }
+
+    .card p {
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    /* ---------------- HUG ---------------- */
+
+    .hug-area {
+        margin: 20px auto;
+    }
+
+    .hug-button {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: none;
+        background: linear-gradient(145deg, #ff8eae, #df5d86);
+        color: white;
+        font-size: 75px;
+        cursor: pointer;
+        box-shadow:
+            0 15px 30px rgba(214,79,123,0.3),
+            inset 0 -5px 10px rgba(0,0,0,0.08);
+        transition: 0.25s;
+    }
+
+    .hug-button:hover {
+        transform: scale(1.08);
+    }
+
+    .hug-button:active {
+        transform: scale(0.92);
+    }
+
+    .hug-text {
+        margin-top: 20px;
+        font-size: 19px;
+        color: #b5476c;
+        min-height: 30px;
+    }
+
+    .hug-count {
+        margin-top: 8px;
+        color: #8f6070;
+    }
+
+    /* ---------------- BUTTONS ---------------- */
+
+    .btn {
+        border: none;
+        padding: 15px 25px;
+        border-radius: 50px;
+        background: #df6388;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 8px;
+        box-shadow: 0 8px 20px rgba(210,80,120,0.2);
+        transition: 0.25s;
+    }
+
+    .btn:hover {
+        transform: translateY(-3px);
+        background: #cc4f76;
+    }
+
+    .btn:active {
+        transform: scale(0.96);
+    }
+
+    /* ---------------- THINGS ---------------- */
+
+    .things {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .thing {
+        padding: 22px 15px;
+        background: rgba(255,239,245,0.8);
+        border-radius: 20px;
+        transition: 0.3s;
+    }
+
+    .thing:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(190,80,120,0.12);
+    }
+
+    .thing .emoji {
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+
+    .thing h3 {
+        color: #c74f75;
+        margin-bottom: 5px;
+    }
+
+    .thing p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* ---------------- BREATHING ---------------- */
+
+    .breathing-circle {
+        width: 150px;
+        height: 150px;
+        margin: 25px auto;
+        border-radius: 50%;
+        background: rgba(255,151,181,0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #a9476a;
+        transition: transform 4s ease-in-out;
+    }
+
+    .breathing-circle.active {
+        transform: scale(1.35);
+    }
+
+    /* ---------------- SECRET ---------------- */
+
+    .secret {
+        display: none;
+        margin-top: 25px;
+        padding: 25px;
+        border-radius: 20px;
+        background: linear-gradient(135deg,#fff4f8,#ffe7ef);
+        animation: appear 0.7s ease;
+    }
+
+    @keyframes appear {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .secret p {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    /* ---------------- FOOTER ---------------- */
+
+    footer {
+        padding: 30px 0 10px;
+        color: #a96b7e;
+        font-size: 14px;
+    }
+
+    /* ---------------- POPUP HUG ---------------- */
+
+    .hug-pop {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background: white;
+        padding: 35px;
+        width: 85%;
+        max-width: 400px;
+        border-radius: 30px;
+        box-shadow: 0 20px 60px rgba(100,30,60,0.25);
+        z-index: 100;
+        transition: 0.35s;
+        text-align: center;
+    }
+
+    .hug-pop.show {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .hug-pop .big {
+        font-size: 70px;
+        margin-bottom: 10px;
+    }
+
+    .hug-pop h2 {
+        color: #d54f79;
+        margin-bottom: 10px;
+    }
+
+    .hug-pop p {
+        line-height: 1.7;
+    }
+
+    /* ---------------- OVERLAY ---------------- */
+
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(70,20,40,0.2);
+        backdrop-filter: blur(3px);
+        display: none;
+        z-index: 99;
+    }
+
+    .overlay.show {
+        display: block;
+    }
+
+    /* ---------------- MOBILE ---------------- */
+
+    @media(max-width:600px) {
+
+        .container {
+            width: 90%;
+        }
+
+        .subtitle {
+            font-size: 17px;
+        }
+
+        .card {
+            padding: 25px 18px;
+        }
+
+        .things {
+            grid-template-columns: 1fr;
+        }
+
+        .hug-button {
+            width: 155px;
+            height: 155px;
+            font-size: 65px;
+        }
+    }
+</style>
+</head>
+
+
+<body>
+
+<!-- FLOATING HEARTS -->
+<div class="hearts" id="hearts"></div>
+
+
+<div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="tiny">A LITTLE SOMETHING FROM UR HUSBANDD</div>
+
+        <h1>Helloo My Loveee ❤️</h1>
+
+        <p class="subtitle">
+            I know you're out with your friends right now...
+            but you're feeling a little dizzy,
+            so I wanted to leave you a tiny place where you can come and feel a little loved 🥺
+        </p>
+
+        <button class="btn" onclick="scrollToHug()">
+            Come here 🫶
+        </button>
+
+        <div class="scroll">
+            ↓ there's something waiting for you ↓
+        </div>
+
+    </section>
+
+
+    <!-- REASSURANCE -->
+    <section class="card">
+
+        <h2>First things first... 🥺</h2>
+
+        <p>
+            Don't worry about anything right now, okay?
+            You're with your friends, so just stay with them,
+            sit somewhere comfortable, take a little rest and drink
+            some water if you can babyyy ❤️
+            <br><br>
+
+            You don't have to be cheerful or pretend you're perfectly fine
+            Just take care of my girl for a little bit
+            And yes... that includes YOU taking care of yourself 🫵🏻
+        </p>
+
+    </section>
+
+
+    <!-- HUG -->
+    <section class="card" id="hugSection">
+
+        <h2>Okay... now come here 🤍</h2>
+
+        <p>
+            Since I can't physically hug you right now,
+            press this whenever you want oneeeee
+        </p>
+
+        <div class="hug-area">
+
+            <button class="hug-button" onclick="giveHug()">
+                🤗
+            </button>
+
+            <div class="hug-text" id="hugText">
+                Press me...
+            </div>
+
+            <div class="hug-count">
+                Hugs received: <span id="hugCount">0</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- THINGS I WOULD DO -->
+    <section class="card">
+
+        <h2>If I were there right now... 🥹</h2>
+
+        <div class="things">
+
+            <div class="thing">
+                <div class="emoji">🤗</div>
+                <h3>I'd hug you</h3>
+                <p>
+                    The kind where I don't let go immediately 
+                </p>
+            </div>
+
+            <div class="thing">
+                <div class="emoji">🤝</div>
+                <h3>Hold your hand</h3>
+                <p>
+                    Just so you know I'm right beside youuu
+                </p>
+            </div>
+
+            <div class="thing">
+                <div class="emoji">🥤</div>
+                <h3>Get you water</h3>
+                <p>
+                    And make sure you actually drink it 😤
+                </p>
+            </div>
+
+            <div class="thing">
+                <div class="emoji">🫂</div>
+                <h3>Stay beside you</h3>
+                <p>
+                    Tere sath hi hu udhr babyyyyy
+                </p>
+            </div>
+
+            <div class="thing">
+                <div class="emoji">💆🏻‍♀️</div>
+                <h3>Take care of you</h3>
+                <p>
+                    For me babyyyy khyal rakhna apnaaaa
+                </p>
+            </div>
+
+            <div class="thing">
+                <div class="emoji">🥺</div>
+                <h3>Look at you</h3>
+                <p>
+                    And probably tell you how pretty you are anywayyyy my slayqueen badieee
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+   
+
+
+    <!-- I'M RIGHT HERE -->
+    <section class="card">
+
+        <h2>One little reminder...</h2>
+
+        <p>
+            You don't have to respond to this
+            You don't have to say anything
+            You don't have to make me feel better
+            <br><br>
+
+            I just want you to know that somewhere,
+            there's a boy who loves you very, very much
+            and wishes he could teleport to wherever you are
+            right now just to sit next to youuu ❤️
+        </p>
+
+        <button class="btn" onclick="rightHere()">
+            I'm right here 🫶
+        </button>
+
+        <p id="rightHereText"
+           style="margin-top:20px; color:#c54f75; font-weight:600;">
+        </p>
+
+    </section>
+
+
+    <!-- SECRET -->
+    <section class="card">
+
+        <h2>There might be something hidden here... 👀</h2>
+
+        <p>
+            But you'll have to press the button.
+        </p>
+
+        <button class="btn" onclick="openSecret()">
+            Open it 💌
+        </button>
+
+        <div class="secret" id="secret">
+
+            <p>
+                My Bachaaaa.....
+                <br><br>
+
+                Khyal rakhnaa apneee and be yourself thik h I am right here with u ❤️
+                <br><br>
+                <br><br>
+
+                <br><br>
+
+                I miss you a lot babyyyyy and I love youuu the mostttt!!!!!!!!
+                ❤️
+                <br><br>
+
+                Your Rishu 🫶
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL -->
+    <section class="card">
+
+        <h2>And one last thing... 🌸</h2>
+
+        <p style="font-size:20px;">
+
+            If you suddenly feel dizzy again,
+            imagine me standing beside you saying:
+            <br><br>
+
+            <strong>
+                "Heyyy... I'm here
+                You're safeee" 🤗❤️
+            </strong>
+
+            <br><br>
+
+            And then I'm giving you the biggest hug everrrr
+
+        </p>
+
+    </section>
+
+
+    <footer>
+        Made with way too much love by Rishu ❤️
+        <br>
+        For You 🌷
+    </footer>
+
+</div>
+
+
+<!-- POPUP -->
+<div class="overlay" id="overlay"></div>
+
+<div class="hug-pop" id="hugPopup">
+
+    <div class="big">🫂</div>
+
+    <h2>BIG HUG DELIVERED ❤️</h2>
+
+    <p id="popupMessage">
+        Come here, baby
+        I've got you
+    </p>
+
+    <button class="btn" onclick="closeHug()">
+        Okay 🥺
+    </button>
+
+</div>
+
+
+<script>
+
+    /* ---------------- FLOATING HEARTS ---------------- */
+
+    const heartContainer = document.getElementById("hearts");
+
+    const heartSymbols = ["♡", "♥", "❤", "💕", "💗", "🌸"];
+
+    for (let i = 0; i < 35; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML =
+            heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+
+        heart.style.left = Math.random() * 100 + "%";
+
+        heart.style.fontSize =
+            (12 + Math.random() * 22) + "px";
+
+        heart.style.animationDuration =
+            (8 + Math.random() * 12) + "s";
+
+        heart.style.animationDelay =
+            (Math.random() * 10) + "s";
+
+        heartContainer.appendChild(heart);
+    }
+
+
+    /* ---------------- SCROLL ---------------- */
+
+    function scrollToHug() {
+
+        document.getElementById("hugSection")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+    }
+
+
+    /* ---------------- HUG SYSTEM ---------------- */
+
+    let hugs = 0;
+
+    const hugMessages = [
+
+        "Okay okay... BIG HUG. 🤗❤️",
+
+        "Another one because one hug wasn't enough 🫂",
+
+        "I'm squeezing you a little tighter this time.🥺",
+
+        "Shhh... just stay here for a second ❤️",
+
+        "Forehead kiss included😚",
+
+        "You are officially trapped in my hug now 😂",
+
+        "Nope. Not letting go yet 🫂",
+
+        "One more because I miss you❤️",
+
+        "Emergency boyfriend hug delivered 🚨🫂",
+
+        "I wish this button could actually teleport me to you 🥺"
+
+    ];
+
+
+    function giveHug() {
+
+        hugs++;
+
+        document.getElementById("hugCount")
+            .innerText = hugs;
+
+        const message =
+            hugMessages[Math.floor(Math.random() * hugMessages.length)];
+
+        document.getElementById("hugText")
+            .innerText = message;
+
+        document.getElementById("popupMessage")
+            .innerText = message;
+
+        document.getElementById("hugPopup")
+            .classList.add("show");
+
+        document.getElementById("overlay")
+            .classList.add("show");
+
+        createHugHearts();
+
+    }
+
+
+    function closeHug() {
+
+        document.getElementById("hugPopup")
+            .classList.remove("show");
+
+        document.getElementById("overlay")
+            .classList.remove("show");
+
+    }
+
+
+    /* ---------------- HUG HEARTS ---------------- */
+
+    function createHugHearts() {
+
+        for (let i = 0; i < 12; i++) {
+
+            const heart = document.createElement("div");
+
+            heart.innerText = "❤️";
+
+            heart.style.position = "fixed";
+            heart.style.left = "50%";
+            heart.style.top = "50%";
+            heart.style.fontSize = "25px";
+            heart.style.zIndex = "200";
+            heart.style.pointerEvents = "none";
+
+            document.body.appendChild(heart);
+
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 100 + Math.random() * 180;
+
+            const x = Math.cos(angle) * distance;
+            const y = Math.sin(angle) * distance;
+
+            heart.animate(
+                [
+                    {
+                        transform: "translate(-50%, -50%) scale(0)",
+                        opacity: 1
+                    },
+                    {
+                        transform:
+                        `translate(calc(-50% + ${x}px),
+                         calc(-50% + ${y}px)) scale(1.5)`,
+                        opacity: 0
+                    }
+                ],
+                {
+                    duration: 1000,
+                    easing: "ease-out"
+                }
+            );
+
+            setTimeout(() => {
+                heart.remove();
+            }, 1000);
+        }
+
+    }
+
+
+    /* ---------------- RIGHT HERE ---------------- */
+
+    function rightHere() {
+
+        const messages = [
+
+            "I'm right here. Always ❤️",
+
+            "You don't have to say anything. Just know I'm here 🫂",
+
+            "Consider this me sitting beside you quietly 🤍",
+
+            "You're not alone. Not even for a second ❤️",
+
+            "Now go enjoy your friends, pretty girl. I'll be right here🥺"
+
+        ];
+
+        const random =
+            messages[Math.floor(Math.random() * messages.length)];
+
+        document.getElementById("rightHereText")
+            .innerText = random;
+
+    }
+
+
+    /* ---------------- SECRET ---------------- */
+
+    function openSecret() {
+
+        const secret =
+            document.getElementById("secret");
+
+        if (secret.style.display === "block") {
+
+            secret.style.display = "none";
+
+        } else {
+
+            secret.style.display = "block";
+
+            secret.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }
+
+    }
+
+
+    /* ---------------- BREATHING ---------------- */
+
+    let breathingRunning = false;
+
+    function startBreathing() {
+
+        if (breathingRunning) return;
+
+        breathingRunning = true;
+
+        const circle =
+            document.getElementById("breathingCircle");
+
+        const text =
+            document.getElementById("breathingText");
+
+        let cycle = 0;
+
+        function breatheIn() {
+
+            circle.classList.add("active");
+
+            circle.innerText = "Breathe in 🌸";
+
+            text.innerText =
+                "Slowly... take a nice deep breath.";
+
+            setTimeout(() => {
+
+                circle.innerText = "Hold 🤍";
+
+                text.innerText =
+                    "Just stay here for a moment.";
+
+                setTimeout(() => {
+
+                    circle.classList.remove("active");
+
+                    circle.innerText = "Breathe out 🌷";
+
+                    text.innerText =
+                        "Slowly let it out.";
+
+                    setTimeout(() => {
+
+                        cycle++;
+
+                        if (cycle < 3) {
+
+                            breatheIn();
+
+                        } else {
+
+                            circle.innerText =
+                                "There ❤️";
+
+                            text.innerText =
+                                "See? One tiny moment at a time.";
+
+                            breathingRunning = false;
+
+                        }
+
+                    }, 4000);
+
+                }, 2000);
+
+            }, 4000);
+
+        }
+
+        breatheIn();
+
+    }
+
+</script>
+
+</body>
+</html>
